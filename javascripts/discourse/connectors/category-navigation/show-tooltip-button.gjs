@@ -2,6 +2,7 @@ import Component from "@glimmer/component";
 import { tracked } from "@glimmer/tracking";
 import DTooltip from "discourse/float-kit/components/d-tooltip";
 import icon from "discourse/helpers/d-icon";
+import { ajax } from "discourse/lib/ajax";
 import { i18n } from "discourse-i18n";
 import { lt } from "truth-helpers";
 
