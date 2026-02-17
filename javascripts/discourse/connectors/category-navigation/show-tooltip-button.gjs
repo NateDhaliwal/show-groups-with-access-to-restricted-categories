@@ -36,7 +36,7 @@ export default class ShowTooltipButton extends Component {
         <:content>
           <div>
             {{i18n (themePrefix "allowed_groups_text")}}
-            {{#each this.groups_list as |group, index|}}
+            {{#each this.groups_list as |group index|}}
               {{group}}{{if (lt index this.maxGroupCount) ", "}}
             {{/each}}
           </div>
