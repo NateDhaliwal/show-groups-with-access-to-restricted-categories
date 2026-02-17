@@ -20,7 +20,7 @@ export default class ShowTooltipButton extends Component {
   }
 
   async fetchAllGroups() {
-    const res = ajax(`/c/${this.args.category.id}/visible_groups.json`);
+    const res = await ajax(`/c/${this.args.category.id}/visible_groups.json`);
     // eslint-disable-next-line no-console
     console.log(res);
     this.groups_list = res["groups"];
