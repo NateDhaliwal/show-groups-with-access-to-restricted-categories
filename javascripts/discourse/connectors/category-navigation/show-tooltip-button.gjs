@@ -30,18 +30,13 @@ export default class ShowTooltipButton extends Component {
 
   <template>
     {{#if this.shouldShow}}
-      <DTooltip class="btn btn-icon" @icon="circle-info">
-        {{!--<:trigger>
-          {{icon "circle-info"}}
-        </:trigger>--}}
-        <:content>
-          <div>
-            {{i18n (themePrefix "allowed_groups_text")}}
-            {{#each this.groups_list as |group index|}}
-              {{group}}{{if (lt index this.maxGroupCount) ", "}}
-            {{/each}}
-          </div>
-        </:content>
+      <DTooltip class="btn btn-flat btn-icon" @icon="circle-info">
+        <div>
+          {{i18n (themePrefix "allowed_groups_text")}}
+          {{#each this.groups_list as |group index|}}
+            {{group}}{{if (lt index this.maxGroupCount) ", "}}
+          {{/each}}
+        </div>
       </DTooltip>
     {{/if}}
   </template>
