@@ -16,12 +16,16 @@ export default class ShowTooltipButton extends Component {
   }
 
   static shouldShow() {
+    // eslint-disable-next-line no-console
+    console.log(this.args.category.read_restricted);
     return this.args.category.read_restricted
   }
 
   async fetchAllGroups() {
     const res = ajax(`/c/${this.args.category.id}/visible_groups.json`);
     this.groups_list = res["groups"];
+    // eslint-disable-next-line no-console
+    console.log(this.groups_list);
   }
 
   get maxGroupCount() {
