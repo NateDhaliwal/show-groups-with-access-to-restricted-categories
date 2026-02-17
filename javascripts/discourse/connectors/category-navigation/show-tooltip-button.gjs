@@ -30,7 +30,7 @@ export default class ShowTooltipButton extends Component {
 
   <template>
     {{#if this.shouldShow}}
-      <DTooltip class="btn btn-icon btn-transparent" @icon="circle-info">
+      <DTooltip class="btn btn-default no-text" @icon="circle-info">
         <div>
           {{i18n (themePrefix "allowed_groups_text")}}
           {{#each this.groups_list as |group index|}}
