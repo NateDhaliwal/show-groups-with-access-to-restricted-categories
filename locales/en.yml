@@ -1,5 +1,4 @@
 en:
   theme_metadata:
-    description: "TODO"
-    settings:
-      example_setting: "A description of a setting."
+    description: "Shows a tooltip in restricted categories with teh allowed groups"
+  allowed_groups_text: "Category allowed groups: "
