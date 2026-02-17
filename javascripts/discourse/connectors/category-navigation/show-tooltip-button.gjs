@@ -30,7 +30,7 @@ export default class ShowTooltipButton extends Component {
 
   <template>
     <span>
-      <DTooltip @placement="top-end" @interactive={{true}}>
+      <DTooltip class="btn btn-icon" @placement="top-end" @interactive={{true}}>
         <:trigger>
           {{icon "circle-info"}}
         </:trigger>
