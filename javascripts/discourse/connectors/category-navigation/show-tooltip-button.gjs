@@ -21,11 +21,7 @@ export default class ShowTooltipButton extends Component {
 
   async fetchAllGroups() {
     const res = await ajax(`/c/${this.args.category.id}/visible_groups.json`);
-    // eslint-disable-next-line no-console
-    console.log(res);
     this.groups_list = res["groups"];
-    // eslint-disable-next-line no-console
-    console.log(this.groups_list);
   }
 
   get maxGroupCount() {
@@ -35,7 +31,7 @@ export default class ShowTooltipButton extends Component {
   <template>
     {{#if this.shouldShow}}
       <span>
-        <DTooltip class="btn btn-icon" @placement="top-end" @interactive={{true}}>
+        <DTooltip class="btn btn-icon" @placement="right" @interactive={{true}}>
           <:trigger>
             {{icon "circle-info"}}
           </:trigger>
