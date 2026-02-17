@@ -31,7 +31,7 @@ export default class ShowTooltipButton extends Component {
   <template>
     {{#if this.shouldShow}}
       <span>
-        <DTooltip class="btn btn-icon" @placement="right" @interactive={{true}}>
+        <DTooltip class="btn btn-icon">
           <:trigger>
             {{icon "circle-info"}}
           </:trigger>
