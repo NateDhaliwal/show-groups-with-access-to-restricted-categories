@@ -15,7 +15,7 @@ export default class ShowTooltipButton extends Component {
     this.fetchAllGroups();
   }
 
-  static shouldShow() {
+  get shouldShow() {
     // eslint-disable-next-line no-console
     console.log(this.args.category.read_restricted);
     return this.args.category.read_restricted
@@ -33,20 +33,22 @@ export default class ShowTooltipButton extends Component {
   }
 
   <template>
-    <span>
-      <DTooltip class="btn btn-icon" @placement="top-end" @interactive={{true}}>
-        <:trigger>
-          {{icon "circle-info"}}
-        </:trigger>
-        <:content>
-          <div>
-            {{i18n (themePrefix "allowed_groups_text")}}
-            {{#each this.groups_list as |group index|}}
-              {{group}}{{if (lt index this.maxGroupCount) ", "}}
-            {{/each}}
-          </div>
-        </:content>
-      </DTooltip>
-    </span>
+    {{#if this.shouldShow}}
+      <span>
+        <DTooltip class="btn btn-icon" @placement="top-end" @interactive={{true}}>
+          <:trigger>
+            {{icon "circle-info"}}
+          </:trigger>
+          <:content>
+            <div>
+              {{i18n (themePrefix "allowed_groups_text")}}
+              {{#each this.groups_list as |group index|}}
+                {{group}}{{if (lt index this.maxGroupCount) ", "}}
+              {{/each}}
+            </div>
+          </:content>
+        </DTooltip>
+      </span>
+    {{/if}}
   </template>
 }
